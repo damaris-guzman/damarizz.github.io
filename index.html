@@ -2,84 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Color Demo</title>
-  <!-- We'll define our colors right in this <style> tag -->
+  <title>Cute Pastel Demo</title>
   <style>
-    /* 1. Base styling for the whole page */
+    /* 1. Page setup: light pastel background */
     body {
-      margin: 0; 
+      margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      /* Light gray background for the entire page */
-      background-color: #f2f2f2;
+      font-family: "Comic Sans MS", cursive, sans-serif; /* Fun, bubbly font */
+      background-color: #FCE4EC; /* Very light pink background */
+      color: #333; /* Dark text color for contrast */
     }
 
-    /* 2. Header area */
+    /* 2. Header with a soft pink color */
     header {
-      background-color: #3498db; /* A bright blue */
-      color: white;
+      background-color: #F48FB1; /* Pastel pink */
+      color: #fff;               /* White text for contrast */
       padding: 20px;
       text-align: center;
+      border-bottom: 3px solid #F06292; /* Slightly darker pink border */
     }
 
-    /* 3. Section for demonstrating colors */
+    /* 3. A paragraph with center text to keep it simple */
+    p {
+      text-align: center;
+      margin: 20px;
+      font-size: 1.1em;
+    }
+
+    /* 4. Cute color box section */
     .color-section {
       display: flex;
-      justify-content: center; 
-      margin: 20px;
-      gap: 20px;  /* Space between boxes */
+      justify-content: center;
+      gap: 20px;
+      margin: 20px auto;
+      max-width: 600px; /* optional, so boxes don’t stretch too wide */
     }
-
     .color-box {
-      width: 150px;
+      width: 140px;
       height: 100px;
-      text-align: center;
-      line-height: 100px; /* Vertically center text inside the box */
+      border-radius: 10px; /* Rounded corners for a softer look */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-weight: bold;
-      color: white;       /* Ensure text is visible on colored backgrounds */
-      border-radius: 5px; /* Slightly rounded corners */
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
     }
-
-    /* 4. Three example color boxes (primary, secondary, accent) */
     .primary {
-      background-color: #3498db; 
+      background-color: #F48FB1; /* Pink to match the header */
     }
     .secondary {
-      background-color: #2ecc71; 
+      background-color: #CE93D8; /* Soft purple */
     }
     .accent {
-      background-color: #e74c3c; 
+      background-color: #80CBC4; /* Soft mint */
     }
 
-    /* 5. Footer styling */
+    /* 5. Footer with a slightly darker pastel pink */
     footer {
-      background-color: #555;  /* Dark gray */
-      color: white;
+      background-color: #F06292; /* Darker pink */
+      color: #fff;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
+      border-top: 3px solid #F48FB1; /* Ties it back to the header color */
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Simple Color Demo</h1>
+    <h1>Welcome to My Cute Pastel Page</h1>
   </header>
 
   <main>
-    <p style="text-align: center; margin: 20px;">
-      Below are three colored boxes that showcase how you can easily add and customize colors on your website.
+    <p>
+      Here are a few soft, feminine color blocks that showcase a fun pastel palette. 
+      Feel free to change the colors to fit your style!
     </p>
 
     <div class="color-section">
-      <div class="color-box primary">Primary</div>
-      <div class="color-box secondary">Secondary</div>
-      <div class="color-box accent">Accent</div>
+      <div class="color-box primary">Pink</div>
+      <div class="color-box secondary">Purple</div>
+      <div class="color-box accent">Mint</div>
     </div>
   </main>
 
   <footer>
-    <p>My Awesome Footer</p>
+    <p>Code life</p>
   </footer>
 
 </body>
