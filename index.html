@@ -2,38 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Monochrome Five-Color Demo</title>
+  <title>Monochrome with Animated Gradient</title>
   <style>
     /* 
-      1. Create five shades of a single hue.
-         Here, we’re using a pinkish palette, from very light (#FFEBEF) to deeper (#FF4B99).
+      1. Define color variables for our pink palette.
+         color1 (lightest) → color5 (deepest).
     */
     :root {
-      --color1: #ffebef; /* lightest pink */
-      --color2: #ffc2d5; /* lighter pink */
-      --color3: #ff9ac0; /* medium pink */
-      --color4: #ff74ad; /* deeper pink */
-      --color5: #ff4b99; /* bold/deep pink */
+      --color1: #ffebef;  /* lightest pink */
+      --color2: #ffc2d5;  /* light pink */
+      --color3: #ff9ac0;  /* medium pink */
+      --color4: #ff74ad;  /* deeper pink */
+      --color5: #ff4b99;  /* bold/deep pink */
 
       --text-color: #333;
-      --footer-bg: var(--color5); /* reuse the deepest color for the footer */
+      --footer-bg: var(--color5);  /* reuse darkest pink for footer */
       --footer-text: #fff;
     }
 
-    /* 2. Reset and basic layout setup */
+    /* 2. Page layout (flex container) with no scrolling if content is short */
     html, body {
-      margin: 0; 
+      margin: 0;
       padding: 0;
-      height: 100%;
+      height: 100%;  /* let the body fill the viewport */
     }
     body {
       display: flex;
       flex-direction: column;
       font-family: Arial, sans-serif;
       color: var(--text-color);
+      background: #fff; /* or a very light pink if you prefer */
     }
 
-    /* 3. Header (at the top, normal flow) */
+    /* 3. Header (normal flow at top) */
     header {
       background-color: var(--color3);
       color: var(--text-color);
@@ -42,31 +43,62 @@
       font-weight: bold;
     }
 
-    /* 4. Main content area */
+    /* 4. Main content expands in the middle to push footer down */
     main {
-      flex: 1; /* fill available space so footer sits at bottom */
+      flex: 1;  
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
+    /* 5. Section to hold our color blocks */
     .color-section {
       display: flex;
       gap: 15px;
     }
+
     .color-box {
       width: 80px;
       height: 80px;
       border-radius: 8px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
-    /* Assign each color variable */
+
+    /* Four static pink blocks */
     .box1 { background-color: var(--color1); }
     .box2 { background-color: var(--color2); }
     .box3 { background-color: var(--color3); }
     .box4 { background-color: var(--color4); }
-    .box5 { background-color: var(--color5); }
 
-    /* 5. Footer fixed at the bottom of the screen */
+    /* 6. Animated gradient block */
+    .gradient-block {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+
+      /* Create a multi-color linear gradient using all 5 shades */
+      background: linear-gradient(
+        270deg, 
+        var(--color1), 
+        var(--color2), 
+        var(--color3), 
+        var(--color4), 
+        var(--color5)
+      );
+      background-size: 1000% 1000%;
+
+      /* Animate the gradient shift */
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 7. Footer fixed at the bottom, no scrolling if content < viewport height */
     footer {
       position: fixed;
       bottom: 0;
@@ -83,21 +115,23 @@
 <body>
 
   <header>
-    <h1>Monochrome Pink Palette</h1>
+    <h1>Monochrome + Animated Gradient</h1>
   </header>
 
   <main>
     <div class="color-section">
+      <!-- Four static blocks (each a different pink) -->
       <div class="color-box box1"></div>
       <div class="color-box box2"></div>
       <div class="color-box box3"></div>
       <div class="color-box box4"></div>
-      <div class="color-box box5"></div>
+      <!-- One animated gradient block -->
+      <div class="gradient-block"></div>
     </div>
   </main>
 
   <footer>
-    Footer Always at the Bottom
+    Footer Always at Bottom (★ω★)/
   </footer>
 
 </body>
