@@ -1,7 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Color Demo</title>
+  <!-- We'll define our colors right in this <style> tag -->
+  <style>
+    /* 1. Base styling for the whole page */
+    body {
+      margin: 0; 
+      padding: 0;
+      font-family: Arial, sans-serif;
+      /* Light gray background for the entire page */
+      background-color: #f2f2f2;
+    }
+
+    /* 2. Header area */
+    header {
+      background-color: #3498db; /* A bright blue */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* 3. Section for demonstrating colors */
+    .color-section {
+      display: flex;
+      justify-content: center; 
+      margin: 20px;
+      gap: 20px;  /* Space between boxes */
+    }
+
+    .color-box {
+      width: 150px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px; /* Vertically center text inside the box */
+      font-weight: bold;
+      color: white;       /* Ensure text is visible on colored backgrounds */
+      border-radius: 5px; /* Slightly rounded corners */
+    }
+
+    /* 4. Three example color boxes (primary, secondary, accent) */
+    .primary {
+      background-color: #3498db; 
+    }
+    .secondary {
+      background-color: #2ecc71; 
+    }
+    .accent {
+      background-color: #e74c3c; 
+    }
+
+    /* 5. Footer styling */
+    footer {
+      background-color: #555;  /* Dark gray */
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with Github Pages.</p>
+
+  <header>
+    <h1>Simple Color Demo</h1>
+  </header>
+
+  <main>
+    <p style="text-align: center; margin: 20px;">
+      Below are three colored boxes that showcase how you can easily add and customize colors on your website.
+    </p>
+
+    <div class="color-section">
+      <div class="color-box primary">Primary</div>
+      <div class="color-box secondary">Secondary</div>
+      <div class="color-box accent">Accent</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>My Awesome Footer</p>
+  </footer>
+
 </body>
 </html>
